@@ -3,12 +3,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import Navbar from "../nav/Navbar";
 import * as actions from "../../actions/auth";
 
  // userloggedin means we have redux state with user record with token
  // isAuthenticated is deconstructed in const HomePage, reason: instead of using props then props.isAuthenticated we deconstruct it and use it directly
 const HomePage = ({ isAuthenticated, logout }) => (
     <div className="ui container">
+    <Navbar/>
+    <br/><br/>
       <h1>Home Page</h1>
       {/* if authenticatd button logout else link to login */}
       {/* onlogout click we dispatch logout thunk action which is found in auth.js*/}
