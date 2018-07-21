@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
  // added
-import { BrowserRouter } from "react-router-dom"; 
+import { BrowserRouter , Route } from "react-router-dom"; 
  // import './index.css';
 import 'semantic-ui-css/semantic.min.css';
 
@@ -36,7 +36,11 @@ import 'semantic-ui-css/semantic.min.css';
 ReactDOM.render(
     <BrowserRouter>
         <Provider store = {store}>
-            <App />
+             {/* problem with updateblockers
+            when we use react redux connect, will have conflict with react router  
+            so we pass to each route location (passed in app.js)
+            Route: high order component  , render app component and pass history,location etc.. to it */}
+            <Route component={App}/> 
         </Provider>
     </BrowserRouter>,
     document.getElementById('root')

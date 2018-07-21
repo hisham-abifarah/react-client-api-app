@@ -14,7 +14,7 @@ const HomePage = ({ isAuthenticated, logout }) => (
     <br/><br/>
       <h1>Home Page</h1>
       {/* if authenticatd button logout else link to login */}
-      {/* onlogout click we dispatch logout thunk action which is found in auth.js*/}
+      {/* onlogout click we dispatch logout thunk action which is found in auth.js */}
       {isAuthenticated ? ( 
         <button onClick={() => logout()}>Logout</button>
       ) : (
@@ -35,7 +35,6 @@ HomePage.propTypes = {
       isAuthenticated: !!state.user.token // isAuthenticated is one of the props available on the home page (if token undefined: isAuthenticaed false, else true)
     };
   }
-
 
  // mapstatetoprops
 export default connect(mapStateToProps, { logout: actions.logout })(HomePage);

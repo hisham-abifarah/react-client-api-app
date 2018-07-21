@@ -12,12 +12,12 @@ import { login } from "../../actions/auth";
 
 
  // const LoginPage = () => (
-//     <div className ="ui container">
-//         <h1>Login Page </h1>
+ //     <div className ="ui container">
+ //         <h1>Login Page </h1>
 
-//         <LoginForm submit = {this.submit}/>
-//     </div>
-// );
+ //         <LoginForm submit = {this.submit}/>
+ //     </div>
+ // );
 
 class LoginPage extends React.Component{
 
@@ -31,7 +31,7 @@ class LoginPage extends React.Component{
     // };
 
     // submit = data =>{ this.props.login(data).then(() => this.props.history.push("/"));}; // < check why it caused error, this.props .catch error in loginform.js in onsubmit :https://stackoverflow.com/questions/46293268/react-js-typeerror-cannot-read-property-catch-of-undefined
-    submit = data =>  this.props.login(data).then(() => this.props.history.push("/"));
+    submit = data =>  this.props.login(data).then(() => this.props.history.push("/dashboard"));
 
     render(){
         return(
