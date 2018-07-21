@@ -6,10 +6,12 @@ import dotenv from "dotenv";
 import Promise from "bluebird";
 
 import auth from "./routes/auth";
+import users from "./routes/users";
 
 dotenv.config();
 
 const app = express();
+const port = '7898';
 app.use(bodyParser.json()); 
 mongoose.Promise = Promise;
 
@@ -25,9 +27,10 @@ process.on('unhandledRejection', (reason, promise) => {
 
 
 app.use("/api/auth", auth);
+app.use("/api/users", users);
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.listen(8882, () => console.log("Running on localhost:8882"));
+app.listen(port, () => console.log("Running on localhost port: " + port));
