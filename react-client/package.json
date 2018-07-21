@@ -35,5 +35,5 @@
     "lint": "eslint src"
   },
   "devDependencies": {},
-  "proxy": "http://localhost:8882"
+  "proxy": "http://localhost:7898"
 }
