@@ -14,7 +14,8 @@ import GuestRoute from "./components/routes/GuestRoute";
  // App component is like a routerdispatcher:renders depending on route so we add Routes inside App()
 
 const App = ({location}) =>  (
-    <div className= "ui container"> 
+    // <div className= "ui container"> 
+    <div> 
     <Route location = {location} path = "/" exact component = {HomePage}/>
     <GuestRoute location = {location}  path = "/login" exact component = {LoginPage}/>
     <GuestRoute location = {location}  path = "/signup" exact component = {SignupPage}/>

@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import LoginForm from "../forms/LoginForm";
 import { login } from "../../actions/auth";
 
-
  // page will render LoginForm
  // loginform take some function, guard date from form and pass data into this function
  // form doesnt know what will happen with data, it will pass it along only

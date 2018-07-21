@@ -10,7 +10,7 @@ class SignupPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="ui container">
         <SignupForm submit={this.submit} />
       </div>
     );
