@@ -17,6 +17,8 @@ import 'semantic-ui-css/semantic.min.css';
  import rootReducer from "./rootReducer";
  import registerServiceWorker from './registerServiceWorker';
  import { userLoggedIn } from "./actions/auth";
+ import './styles/style.scss';
+ import 'font-awesome/css/font-awesome.css';
 
   // create Store
   // rootreducer : whole state object  

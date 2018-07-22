@@ -9,6 +9,7 @@ import SignupPage from './components/pages/SignupPage';
 import DashboardPage from './components/pages/DashboardPage';
 import UserRoute from "./components/routes/UserRoute";
 import GuestRoute from "./components/routes/GuestRoute";
+import './styles/style.scss';
  // import logo from './logo.svg';
  // import './App.css';
  // App component is like a routerdispatcher:renders depending on route so we add Routes inside App()

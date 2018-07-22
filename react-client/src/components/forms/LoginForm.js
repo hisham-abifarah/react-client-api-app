@@ -1,8 +1,79 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Form, Button, Message } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import { Form, Message } from "semantic-ui-react";
+// import { Button } from "@material-ui/core";
+import { grey500  } from '@material-ui/core/styles';
+import FlatButton  from '@material-ui/core/Button';
+import  PersonAdd  from '@material-ui/core/SvgIcon';
+import Help from '@material-ui/core/SvgIcon';
 import Validator from "validator";
 import InlineError from "../messages/InlineError";
+
+
+const styles = {
+  loginContainer: {
+    minWidth: 320,
+    maxWidth: 400,
+    height: 'auto',
+    position: 'absolute',
+    top: '10%',
+    left: 0,
+    right: 0,
+    margin: 'auto'
+  },
+  paper: {
+    padding: 20,
+    overflow: 'auto'
+  },
+  buttonsDiv: {
+    textAlign: 'center',
+    padding: 10
+  },
+  flatButton: {
+    color: grey500
+  },
+  checkRemember: {
+    style: {
+      float: 'left',
+      maxWidth: 180,
+      paddingTop: 5
+    },
+    labelStyle: {
+      color: grey500
+    },
+    iconStyle: {
+      color: grey500,
+      borderColor: grey500,
+      fill: grey500
+    }
+  },
+  loginBtn: {
+    background: '#4f81e9',
+    padding: 7,
+    borderRadius: 2,
+    margin: 2,
+    fontSize: 13,
+    float: 'right'
+  },
+  btn: {
+    background: '#4f81e9',
+    padding: 7,
+    borderRadius: 2,
+    margin: 2,
+    fontSize: 13,
+    float: 'center'
+  },
+  btnFacebook: {
+    background: '#4f81e9'
+  },
+  btnGoogle: {
+    background: '#e14441'
+  },
+  btnSpan: {
+    marginLeft: 5
+  },
+};
 
 class LoginForm extends React.Component {
   state = {
@@ -43,6 +114,7 @@ class LoginForm extends React.Component {
     const { data, errors, loading } = this.state;
 
     return (
+      <div style={styles.loginContainer}>
       <Form onSubmit={this.onSubmit} loading={loading}>
         {errors.global && (
           <Message negative>
@@ -50,6 +122,7 @@ class LoginForm extends React.Component {
             <p>{errors.global}</p>
           </Message>
         )}
+
         <Form.Field error={!!errors.email}>
           <label htmlFor="email">Email</label>
           <input
@@ -74,8 +147,36 @@ class LoginForm extends React.Component {
           />
           {errors.password && <InlineError text={errors.password} />}
         </Form.Field>
-        <Button primary>Login</Button>
+        {/* <Button type="submit" style={styles.btn}>Login</Button> */}
+
+           <div style={styles.buttonsDiv}>
+            <FlatButton
+              type="submit"
+              style={styles.flatButton}
+              icon={<PersonAdd />}
+            >Login </FlatButton>
+
+          <FlatButton
+              label="Forgot Password?"
+              href="/"
+              style={styles.flatButton}
+              icon={<Help />}
+              >Forgot Password? </FlatButton>
+            </div>
+
+              <div style={styles.buttonsDiv}>
+            <Link to="/" style={{...styles.btn, ...styles.btnFacebook}}>
+              <i className="fa fa-facebook fa-lg"/>
+              <span style={styles.btnSpan}>Log in with Facebook</span>
+            </Link>
+            <Link to="/signup" style={{...styles.btn, ...styles.btnGoogle}}>
+              <i className="fa fa-google-plus fa-lg"/>
+              <span style={styles.btnSpan}>Log in with Google</span>
+            </Link>
+          </div>
+
       </Form>
+      </div>
     );
   }
 }
